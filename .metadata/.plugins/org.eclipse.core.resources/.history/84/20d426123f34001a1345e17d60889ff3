@@ -1,0 +1,69 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Employee implements Comparable<Employee>{
+	int empid,ename;
+	String elocation;
+	@Override
+	public String toString() {
+		return "Employee [empid=" + empid + ", ename=" + ename + ", elocation=" + elocation + "]";
+	}
+
+	
+	
+		
+	
+	public Employee(int empid, int ename, String elocation) {
+		super();
+		this.empid = empid;
+		this.ename = ename;
+		this.elocation = elocation;
+	}
+	
+	public int getEmpid() {
+		return empid;
+	}
+
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+
+	public int getEname() {
+		return ename;
+	}
+
+	public void setEname(int ename) {
+		this.ename = ename;
+	}
+
+	public String getElocation() {
+		return elocation;
+	}
+
+	public void setElocation(String elocation) {
+		this.elocation = elocation;
+	}
+
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		return o.empid;
+	}	
+}
+
+
+public class EmployeeNewClass {
+
+	public static void main(String [] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Employee> a=new ArrayList<Employee>();
+		a.add(new Employee(10, 20, "elocation"));
+		a.add(new Employee(40, 30, "aloc"));
+		Collections.sort(a);
+		for(Employee b:a)
+		System.out.println(b.empid);
+	}
+
+}

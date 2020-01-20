@@ -1,0 +1,25 @@
+package jdbc;
+import java.sql.*;
+public class NewjdbcClass 
+{
+		public static void main(String[] args)
+		{
+		// TODO Auto-generated method stub
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				Connection com=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","hr");
+				Statement stat=com.createStatement();
+				ResultSet rs=stat.executeQuery("select * from emp");
+				while(rs.next()) {
+				System.out.println(rs.getInt(1)+"   "+rs.getString(2));
+				}
+				com.close();
+			}
+				catch(Exception e)
+				   {
+					System.out.println(e);
+				   }
+			    }
+	}
+
+}

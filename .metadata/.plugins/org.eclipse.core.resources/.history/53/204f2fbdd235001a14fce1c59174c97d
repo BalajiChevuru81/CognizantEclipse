@@ -1,0 +1,30 @@
+
+package lambdaExpression;
+import java.util.*;
+class LambdaEmp{
+	int eid,esalary; 
+	String ename;
+	    public LambdaEmp(int eid, int esalary, String ename) {
+		super();
+		this.eid = eid;
+		this.esalary = esalary;
+		this.ename = ename;
+	}
+}
+
+public class LambdaExpExamples {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<LambdaEmp> e=new ArrayList<LambdaEmp>();
+		e.add(new LambdaEmp(101, 10500, "Uday"));
+		e.add(new LambdaEmp(102, 10600, "Anil"));
+		e.add(new LambdaEmp(103, 10550, "Siva"));
+		System.out.println("Sorting on the basis of name...");  
+		Collections.sort(e,(p1,p2)->{  
+        return p1.ename.compareTo(p2.ename);  
+        });  
+        for(LambdaEmp p:e){  
+            System.out.println(p.eid+" "+p.ename+" "+p.esalary);  
+        }  
+	}
+}

@@ -1,0 +1,42 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Employee implements Comparable<Employee>
+{
+	public String name;
+	int empId;
+	public Employee(String name,int empId)
+	{
+		this.name=name;
+		this.empId=empId;
+	}
+	public int compareTo(Employee id) 
+	{
+		return empId.compareTo(id.empId);
+	}
+}
+
+public class CollectionsCompare {
+
+	public static void main(String[] args) {
+		ArrayList<Employee> a1=new ArrayList<Employee>();
+		 /*a1.add(new Employee("arjun"));
+		 a1.add(new Employee("raju"));
+		 a1.add(new Employee("ravi"));
+		 a1.add(new Employee("aaon"));*/
+		 
+		 a1.add(new Employee(null, 101));
+		 a1.add(new Employee(null, 102));
+		 a1.add(new Employee(null, 103));
+		 a1.add(new Employee(null, 104));
+		 
+		 Collections.sort(a1);
+		 for(Employee b:a1)
+			 System.out.println(b.empId);
+		 
+
+	}
+
+}

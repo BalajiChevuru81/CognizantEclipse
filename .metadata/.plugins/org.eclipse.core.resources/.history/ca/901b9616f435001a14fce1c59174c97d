@@ -1,0 +1,25 @@
+package lambdaExpression;
+import java.io.*;
+class Student implements Serializable{
+	int eid;
+	String name;
+	public Student(int eid, String name) {
+		super();
+		this.eid = eid;
+		this.name = name;
+	}
+}
+public class ReadFromFile{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			try {
+					ObjectInputStream o=new ObjectInputStream(new FileInputStream("E:\\fabc.txt"));
+					Student s=(Student)o.readObject();
+					System.out.println(s.eid+" "+s.name);
+					o.close();
+				}
+			catch(Exception e) {
+				System.out.println(e);
+			}	
+	}
+}

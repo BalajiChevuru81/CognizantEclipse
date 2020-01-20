@@ -1,0 +1,18 @@
+package lambdaExpression;
+import java.io.*;
+public class FileInStreem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		FileInputStream fi=new FileInputStream();
+		int i=fi.read();
+		System.out.println("readed");
+		catch (Exception e) {
+			// TODO: handle exception
+			
+		}
+	}
+	}
+
+}
